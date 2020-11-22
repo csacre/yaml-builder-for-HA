@@ -9,21 +9,24 @@ cintIndent = 2
 __location__ = ""
 
 def getHassIOStates():
-    #curl -X GET -H "Authorization: Bearer xxx
+
     x = {}
-
+    ## Replace below by your own IP + replace xxx by a long_lived token if needed
     url = "http://192.168.1.10:8123/api/states"
-    header= {
-        "Authorization": "Bearer xxx",
-        "Content-Type": "application/json"
-    }
+    token = "xxxxxx"
+    
+    if token  != "xxxxxx":
+        header= {
+            "Authorization": "Bearer " + token,
+            "Content-Type": "application/json"
+        }
 
-    page = requests.get(url, headers =header)
-    if page.status_code == 200:
-        x= json.loads(page.content.decode("utf-8"))
-    else:
-        #raise Exception('Error API Hassio','issue cwith API call')
-        x={}
+        page = requests.get(url, headers =header)
+        if page.status_code == 200:
+            x= json.loads(page.content.decode("utf-8"))
+        else:
+            raise Exception('Error API Hassio','issue cwith API call')
+            
     return x
 
 def buildBagForJinja(todo, states):

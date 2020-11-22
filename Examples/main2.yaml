@@ -1,0 +1,18 @@
+########################################
+#Generation of YAML for big screen 
+#this part is usually injected in a picture-element block
+# #block 0 means the full file
+########################################
+#include template2.yaml,{"#block": "0","zigate": "00158d0003a28772","left": 82.2,"top": 81,"trendname": "bureau","size":1 , "targetsensor": "input_number.bureau_target_temperature" }
+#include template2.yaml,{"#block": "0","zigate": "00158d00034f8c03","left": 50.75,"top": 62,"trendname": "hall","size":1 }
+#include template2.yaml,{"#block": "0","zigate": "nest","left": 29.5,"top": 28,"trendname": "salon","size":1 , "targetsensor": "sensor.nest_target_temperature" }
+
+########################################
+#Generation of YAML adapting the layour for smaller screen by changing the size to 2
+#this part is usually injected in a picture-element block
+# #block 0 means the full file
+########################################
+#include template2.yaml,{"#block": "0","zigate": "00158d0003a28772","left": 82.2,"top": 81,"trendname": "bureau","size":2 , "targetsensor": "input_number.bureau_target_temperature" }
+#include template2.yaml,{"#block": "0","zigate": "00158d00034f8c03","left": 50.75,"top": 62,"trendname": "hall","size":2 }
+#include template2.yaml,{"#block": "0","zigate": "nest","left": 29.5,"top": 28,"trendname": "salon","size":2 , "targetsensor": "sensor.nest_target_temperature" }
+
