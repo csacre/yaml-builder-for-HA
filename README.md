@@ -25,13 +25,14 @@ python ../yamlbuilder.py inputfile.yaml outputfile.yaml
 Command to add in YAML file (JSON parameters are optional:   
 \#include <template.yaml>,<JSON parameters>
 The indentation of the ocmmand is very important. The block will be inserted using the same indentation as the command.
+(The table is at the very end of the doc and I have no clue why???)
 
- | Keywords  | Type           | Description                                                                   |
- | --------- | -------------- | ------------------------------------------------------------------------------ |
- | #include  | Command        | The command is #include,<template file>, the full content of the template will be incorporated |
- | #block    | JSON Parameter | Can define one of the block inside the template to only incorporate it and not the full yaml file. It works for now on 2 levels | 
- | #jinja    | JSON Parameter | true (default) or false, this allows to disable jinja engine to run on the template |
- | END       | Command        | For debugging purpose, the reading of tthe file just stop if it reads the keywor "END"  |
+| Keywords  | Type           | Description                                                                   |
+| --------- | -------------- | ------------------------------------------------------------------------------ |
+| #include  | Command        | The command is #include,<template file>, the full content of the template will be incorporated |
+| #block    | JSON Parameter | Can define one of the block inside the template to only incorporate it and not the full yaml file. It works for now on 2 levels | 
+| #jinja    | JSON Parameter | true (default) or false, this allows to disable jinja engine to run on the template |
+| END       | Command        | For debugging purpose, the reading of tthe file just stop if it reads the keywor "END"  |
  
 
 # Example1 - Build automatically 1 automation for each "scene" of a room based on the selection done in a "input_select".
