@@ -1,0 +1,127 @@
+#-----------------------------------------------------------------------------
+# Scene activation based on input option for bureau
+#-----------------------------------------------------------------------------
+- id: 'change input select to day for state_bureau'
+ alias: 'change input select to day for state_bureau'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_bureau
+     to: 'day'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_bureau_day
+     
+- id: 'change input select to evening for state_bureau'
+ alias: 'change input select to evening for state_bureau'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_bureau
+     to: 'evening'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_bureau_evening
+     
+- id: 'change input select to homeworking for state_bureau'
+ alias: 'change input select to homeworking for state_bureau'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_bureau
+     to: 'homeworking'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_bureau_homeworking
+     
+- id: 'change input select to sleep_all for state_bureau'
+ alias: 'change input select to sleep_all for state_bureau'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_bureau
+     to: 'sleep_all'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_bureau_sleep_all
+     
+- id: 'change input select to sleep_chronos for state_bureau'
+ alias: 'change input select to sleep_chronos for state_bureau'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_bureau
+     to: 'sleep_chronos'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_bureau_sleep_chronos
+     
+- id: 'change input select to presence for state_bureau'
+ alias: 'change input select to presence for state_bureau'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_bureau
+     to: 'presence'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_bureau_presence
+     
+
+#-----------------------------------------------------------------------------
+# Scene activation based on input option for living room
+#-----------------------------------------------------------------------------
+- id: 'change input select to all_off for state_salon'
+ alias: 'change input select to all_off for state_salon'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_salon
+     to: 'all_off'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_salon_all_off
+     
+- id: 'change input select to presence for state_salon'
+ alias: 'change input select to presence for state_salon'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_salon
+     to: 'presence'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_salon_presence
+     
+- id: 'change input select to ready for state_salon'
+ alias: 'change input select to ready for state_salon'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_salon
+     to: 'ready'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_salon_ready
+     
+- id: 'change input select to tv_on_day for state_salon'
+ alias: 'change input select to tv_on_day for state_salon'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_salon
+     to: 'tv_on_day'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_salon_tv_on_day
+     
+- id: 'change input select to tv_on_evening for state_salon'
+ alias: 'change input select to tv_on_evening for state_salon'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_salon
+     to: 'tv_on_evening'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_salon_tv_on_evening
+     
+- id: 'change input select to tv_off for state_salon'
+ alias: 'change input select to tv_off for state_salon'
+ trigger:
+   - platform: state
+     entity_id: input_select.state_salon
+     to: 'tv_off'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_salon_tv_off
+     

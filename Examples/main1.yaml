@@ -1,0 +1,19 @@
+#-----------------------------------------------------------------------------
+# Scene activation based on input option for bureau
+#-----------------------------------------------------------------------------
+#include template1.yaml,{"newstate":"day"          ,"inputselect": "state_bureau", "room": "bureau"}
+#include template1.yaml,{"newstate":"evening"      ,"inputselect": "state_bureau", "room": "bureau"}
+#include template1.yaml,{"newstate":"homeworking"  ,"inputselect": "state_bureau", "room": "bureau"}
+#include template1.yaml,{"newstate":"sleep_all"    ,"inputselect": "state_bureau", "room": "bureau"}
+#include template1.yaml,{"newstate":"sleep_chronos","inputselect": "state_bureau", "room": "bureau"}
+#include template1.yaml,{"newstate":"presence"     ,"inputselect": "state_bureau", "room": "bureau"}
+
+#-----------------------------------------------------------------------------
+# Scene activation based on input option for living room
+#-----------------------------------------------------------------------------
+#include template1.yaml,{"newstate":"all_off"      ,"inputselect": "state_salon", "room": "salon"}
+#include template1.yaml,{"newstate":"presence"     ,"inputselect": "state_salon", "room": "salon"}
+#include template1.yaml,{"newstate":"ready"        ,"inputselect": "state_salon", "room": "salon"}
+#include template1.yaml,{"newstate":"tv_on_day"    ,"inputselect": "state_salon", "room": "salon"}
+#include template1.yaml,{"newstate":"tv_on_evening","inputselect": "state_salon", "room": "salon"}
+#include template1.yaml,{"newstate":"tv_off"       ,"inputselect": "state_salon", "room": "salon"}

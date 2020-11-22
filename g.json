@@ -1,0 +1,9 @@
+{
+    "automations" : "(automation.)+",
+    "sensors"     : "(sensor.)+",
+    "zbatteries"  : "sensor.[0-9a-f]{16}_power",
+    "zhumidity"   : "sensor.[0-9a-f]{16}_humidity",
+    "ztemperature": "sensor.[0-9a-f]{16}_temperature",
+    "var1": "value1",
+    "var2": "value2"
+}
