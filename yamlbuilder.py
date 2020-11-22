@@ -12,7 +12,7 @@ def getHassIOStates():
     #curl -X GET -H "Authorization: Bearer xxx
     x = {}
 
-    url = "http://192.168.2.49:8123/api/states"
+    url = "http://192.168.1.10:8123/api/states"
     header= {
         "Authorization": "Bearer xxx",
         "Content-Type": "application/json"
