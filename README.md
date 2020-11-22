@@ -19,7 +19,7 @@ Code is not bullet-proof (220 lines of code written on a few hours) but it does 
 - Possibility to pass Home-Assistant objects to the template (if used in HA context of course)
 
 # Command line
-python ../yamlbuilder.py <inputfile>.yaml <outputfile>.yaml
+python ../yamlbuilder.py inputfile.yaml outputfile.yaml
 
 # Syntax for Command & Parameters inside the templates
 Command to add in YAML file (JSON parameters are optional:   
