@@ -1,0 +1,62 @@
+- entity: sensor.{{ j.zigate }}_temperature
+  style:
+    left: {{ j.left }}%
+    top: {{ j.top }}%
+  title: température
+  type: state-label
+- entity: sensor.{{ j.zigate }}_humidity
+  style:
+    left: {{ j.left }}%
+    top: {{ j.top+ (7/j.size) }}%
+  title: humidité
+  type: state-label
+- conditions:
+    - entity: binary_sensor.{{ j.trendname }}_temp_rising
+      state: 'on'
+  elements:
+    - icon: mdi:thermometer-chevron-up
+      style:
+        left: {{ j.left-(11/j.size) }}%
+        top: {{ j.top+(4/j.size) }}%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: binary_sensor.{{ j.trendname }}_temp_rising
+      state_color: false
+  type: conditional
+- conditions:
+    - entity: binary_sensor.{{ j.trendname }}_temp_rising
+      state: 'off'
+  elements:
+    - icon: mdi:thermometer-chevron-down
+      style:
+        left: {{ j.left-(11/j.size) }}%
+        top: {{ j.top+(4/j.size) }}%
+        '--paper-item-icon-color': blue
+      type: state-icon
+      entity: binary_sensor.{{ j.trendname }}_temp_rising
+      state_color: false
+  type: conditional  
+{% if j.targetsensor is defined %}  
+- entity: {{ j.targetsensor }}
+  style: 
+    left: {{ j.left - 1 }}%
+    top: {{ j.top + (12/j.size) }}%
+    font-size: 10px
+
+  type: state-label
+{% endif %}
+- conditions:
+    - entity: sensor.alert_{{ j.zigate }}_humidity
+      state: 'heavy'
+  elements:
+    - icon: mdi:alert-rhombus
+      style:
+        left: {{ j.left+(11/j.size) }}%
+        top: {{ j.top+(4/j.size) }}%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: sensor.alert_{{ j.zigate }}_humidity
+      state_color: false
+  type: conditional
+
+

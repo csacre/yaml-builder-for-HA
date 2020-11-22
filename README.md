@@ -32,6 +32,10 @@ I use this to have a better "semantic" view of my files and this can enforse eas
 
 You need one template for the automation: template1.yaml
 in this case it reprends the "how" a functionality is rendered in native YAML for Home-Assistant
+  
+**python ../yamlbuilder.py main1.yaml output1.yaml**
+
+
  ```
  - id: 'change input select to {{ j.newstate }} for {{ j.inputselect }}'
   alias: 'change input select to {{ j.newstate }} for {{ j.inputselect }}'
@@ -69,4 +73,52 @@ The main file for the builder: main1.yaml
 #include template1.yaml,{"newstate":"tv_off"       ,"inputselect": "state_salon", "room": "salon"}
 
 ```
+
+# Example2 - More advanced
+Look into the second example where we use the receive parameters to make some computation to position correctly several icons in a common way
+inside a picture-elements.
+
+There is also a g.json allowing to define global parameters (static) or dynamic collection of HA objects.
+The static data can be accessed in templete using {{ g.<attribute> }} to get the associated value
+
+If you need to apply a template for all sensor having regex selection on name, you need to define the IP adress of HA
+ and provides a bearer token. For now, simply dapt the code at the top of yamlbuilder.yaml
+
+## Example of 
+Here below I define static variables (var1, var2) and dynamic lists of objects I extract from HA to allow making loop in my templates
+```
+{
+    "automations" : "(automation.)+",
+    "sensors"     : "(sensor.)+",
+    "zbatteries"  : "sensor.[0-9a-f]{16}_power",
+    "zhumidity"   : "sensor.[0-9a-f]{16}_humidity",
+    "ztemperature": "sensor.[0-9a-f]{16}_temperature",
+    "var1": "value1",
+    "var2": "value2"
+}
+```
+Here below is the template to generate alerts for all my "humidity" sensors.
+The zhumidity collection is defined here-above in the g.json file (using regex expression for selection)
+
+```
+###########################################
+#
+# ALERT
+#
+###########################################
+- platform: template
+  sensors:
+  {% for z in g.zhumidity -%}
+    {{ "  alert_" }}{{ z.entity_id[7:] }}:
+      friendly_name:  {{ "\"Alert "}}{{ z.entity_id[7:] }}"
+      value_template: {{ "\"{{ 'normal' if states('"}}{{ z.entity_id }}{{"') | float < 70.0 else 'heavy'}}\"" }}
+      icon_template: >
+        {{ "{% if states('{{ "}}{{ z.entity_id }}{{"}}') | float < 70.0 %}"}}
+          mdi:thumb-up-outline
+        {{ "{% else %} "}}
+          mdi:alert-rhombus
+        {{ "{% endif %}"}}
+  {% endfor %}
+```
+
 

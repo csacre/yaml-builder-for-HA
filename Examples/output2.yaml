@@ -1,0 +1,368 @@
+########################################
+#Generation of YAML for big screen 
+#this part is usually injected in a picture-element block
+# #block 0 means the full file
+########################################
+- entity: sensor.00158d0003a28772_temperature
+  style:
+    left: 82.2%
+    top: 81%
+  title: température
+  type: state-label
+- entity: sensor.00158d0003a28772_humidity
+  style:
+    left: 82.2%
+    top: 88.0%
+  title: humidité
+  type: state-label
+- conditions:
+    - entity: binary_sensor.bureau_temp_rising
+      state: 'on'
+  elements:
+    - icon: mdi:thermometer-chevron-up
+      style:
+        left: 71.2%
+        top: 85.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: binary_sensor.bureau_temp_rising
+      state_color: false
+  type: conditional
+- conditions:
+    - entity: binary_sensor.bureau_temp_rising
+      state: 'off'
+  elements:
+    - icon: mdi:thermometer-chevron-down
+      style:
+        left: 71.2%
+        top: 85.0%
+        '--paper-item-icon-color': blue
+      type: state-icon
+      entity: binary_sensor.bureau_temp_rising
+      state_color: false
+  type: conditional  
+  
+- entity: input_number.bureau_target_temperature
+  style: 
+    left: 81.2%
+    top: 93.0%
+    font-size: 10px
+
+  type: state-label
+
+- conditions:
+    - entity: sensor.alert_00158d0003a28772_humidity
+      state: 'heavy'
+  elements:
+    - icon: mdi:alert-rhombus
+      style:
+        left: 93.2%
+        top: 85.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: sensor.alert_00158d0003a28772_humidity
+      state_color: false
+  type: conditional
+
+
+- entity: sensor.00158d00034f8c03_temperature
+  style:
+    left: 50.75%
+    top: 62%
+  title: température
+  type: state-label
+- entity: sensor.00158d00034f8c03_humidity
+  style:
+    left: 50.75%
+    top: 69.0%
+  title: humidité
+  type: state-label
+- conditions:
+    - entity: binary_sensor.hall_temp_rising
+      state: 'on'
+  elements:
+    - icon: mdi:thermometer-chevron-up
+      style:
+        left: 39.75%
+        top: 66.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: binary_sensor.hall_temp_rising
+      state_color: false
+  type: conditional
+- conditions:
+    - entity: binary_sensor.hall_temp_rising
+      state: 'off'
+  elements:
+    - icon: mdi:thermometer-chevron-down
+      style:
+        left: 39.75%
+        top: 66.0%
+        '--paper-item-icon-color': blue
+      type: state-icon
+      entity: binary_sensor.hall_temp_rising
+      state_color: false
+  type: conditional  
+
+- conditions:
+    - entity: sensor.alert_00158d00034f8c03_humidity
+      state: 'heavy'
+  elements:
+    - icon: mdi:alert-rhombus
+      style:
+        left: 61.75%
+        top: 66.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: sensor.alert_00158d00034f8c03_humidity
+      state_color: false
+  type: conditional
+
+
+- entity: sensor.nest_temperature
+  style:
+    left: 29.5%
+    top: 28%
+  title: température
+  type: state-label
+- entity: sensor.nest_humidity
+  style:
+    left: 29.5%
+    top: 35.0%
+  title: humidité
+  type: state-label
+- conditions:
+    - entity: binary_sensor.salon_temp_rising
+      state: 'on'
+  elements:
+    - icon: mdi:thermometer-chevron-up
+      style:
+        left: 18.5%
+        top: 32.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: binary_sensor.salon_temp_rising
+      state_color: false
+  type: conditional
+- conditions:
+    - entity: binary_sensor.salon_temp_rising
+      state: 'off'
+  elements:
+    - icon: mdi:thermometer-chevron-down
+      style:
+        left: 18.5%
+        top: 32.0%
+        '--paper-item-icon-color': blue
+      type: state-icon
+      entity: binary_sensor.salon_temp_rising
+      state_color: false
+  type: conditional  
+  
+- entity: sensor.nest_target_temperature
+  style: 
+    left: 28.5%
+    top: 40.0%
+    font-size: 10px
+
+  type: state-label
+
+- conditions:
+    - entity: sensor.alert_nest_humidity
+      state: 'heavy'
+  elements:
+    - icon: mdi:alert-rhombus
+      style:
+        left: 40.5%
+        top: 32.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: sensor.alert_nest_humidity
+      state_color: false
+  type: conditional
+
+
+
+########################################
+#Generation of YAML adapting the layour for smaller screen by changing the size to 2
+#this part is usually injected in a picture-element block
+# #block 0 means the full file
+########################################
+- entity: sensor.00158d0003a28772_temperature
+  style:
+    left: 82.2%
+    top: 81%
+  title: température
+  type: state-label
+- entity: sensor.00158d0003a28772_humidity
+  style:
+    left: 82.2%
+    top: 84.5%
+  title: humidité
+  type: state-label
+- conditions:
+    - entity: binary_sensor.bureau_temp_rising
+      state: 'on'
+  elements:
+    - icon: mdi:thermometer-chevron-up
+      style:
+        left: 76.7%
+        top: 83.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: binary_sensor.bureau_temp_rising
+      state_color: false
+  type: conditional
+- conditions:
+    - entity: binary_sensor.bureau_temp_rising
+      state: 'off'
+  elements:
+    - icon: mdi:thermometer-chevron-down
+      style:
+        left: 76.7%
+        top: 83.0%
+        '--paper-item-icon-color': blue
+      type: state-icon
+      entity: binary_sensor.bureau_temp_rising
+      state_color: false
+  type: conditional  
+  
+- entity: input_number.bureau_target_temperature
+  style: 
+    left: 81.2%
+    top: 87.0%
+    font-size: 10px
+
+  type: state-label
+
+- conditions:
+    - entity: sensor.alert_00158d0003a28772_humidity
+      state: 'heavy'
+  elements:
+    - icon: mdi:alert-rhombus
+      style:
+        left: 87.7%
+        top: 83.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: sensor.alert_00158d0003a28772_humidity
+      state_color: false
+  type: conditional
+
+
+- entity: sensor.00158d00034f8c03_temperature
+  style:
+    left: 50.75%
+    top: 62%
+  title: température
+  type: state-label
+- entity: sensor.00158d00034f8c03_humidity
+  style:
+    left: 50.75%
+    top: 65.5%
+  title: humidité
+  type: state-label
+- conditions:
+    - entity: binary_sensor.hall_temp_rising
+      state: 'on'
+  elements:
+    - icon: mdi:thermometer-chevron-up
+      style:
+        left: 45.25%
+        top: 64.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: binary_sensor.hall_temp_rising
+      state_color: false
+  type: conditional
+- conditions:
+    - entity: binary_sensor.hall_temp_rising
+      state: 'off'
+  elements:
+    - icon: mdi:thermometer-chevron-down
+      style:
+        left: 45.25%
+        top: 64.0%
+        '--paper-item-icon-color': blue
+      type: state-icon
+      entity: binary_sensor.hall_temp_rising
+      state_color: false
+  type: conditional  
+
+- conditions:
+    - entity: sensor.alert_00158d00034f8c03_humidity
+      state: 'heavy'
+  elements:
+    - icon: mdi:alert-rhombus
+      style:
+        left: 56.25%
+        top: 64.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: sensor.alert_00158d00034f8c03_humidity
+      state_color: false
+  type: conditional
+
+
+- entity: sensor.nest_temperature
+  style:
+    left: 29.5%
+    top: 28%
+  title: température
+  type: state-label
+- entity: sensor.nest_humidity
+  style:
+    left: 29.5%
+    top: 31.5%
+  title: humidité
+  type: state-label
+- conditions:
+    - entity: binary_sensor.salon_temp_rising
+      state: 'on'
+  elements:
+    - icon: mdi:thermometer-chevron-up
+      style:
+        left: 24.0%
+        top: 30.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: binary_sensor.salon_temp_rising
+      state_color: false
+  type: conditional
+- conditions:
+    - entity: binary_sensor.salon_temp_rising
+      state: 'off'
+  elements:
+    - icon: mdi:thermometer-chevron-down
+      style:
+        left: 24.0%
+        top: 30.0%
+        '--paper-item-icon-color': blue
+      type: state-icon
+      entity: binary_sensor.salon_temp_rising
+      state_color: false
+  type: conditional  
+  
+- entity: sensor.nest_target_temperature
+  style: 
+    left: 28.5%
+    top: 34.0%
+    font-size: 10px
+
+  type: state-label
+
+- conditions:
+    - entity: sensor.alert_nest_humidity
+      state: 'heavy'
+  elements:
+    - icon: mdi:alert-rhombus
+      style:
+        left: 35.0%
+        top: 30.0%
+        '--paper-item-icon-color': red
+      type: state-icon
+      entity: sensor.alert_nest_humidity
+      state_color: false
+  type: conditional
+
+
+
