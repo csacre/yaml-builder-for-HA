@@ -8,6 +8,8 @@ Batch program in python producing a yaml file in output based on a template. Thi
 This is my first project sharing on Github and I try to do my best, suggestion/coaching is welcomed.
 Code is not bullet-proof (220 lines of code written on a few hours) but it does the job.
 
+# What it could help you to build in HA...
+![](images/HA_Results_Example.png)
 # Features
 - Replace a part of a YAML file by inserting a template
 - The template rendering engine is Jinja2 (see https://jinja.palletsprojects.com/en/2.11.x/), to replace value, if statement logic etc...
@@ -181,9 +183,9 @@ You have to typically insert the block1 in a lovelace yaml file and the builder 
   cards:
   #include bam_blocks.yaml,{"#block":"3", "bam_entity":"zigate.zigate" , "bam_entity_name":"Zigate", "icon":"mdi:zigbee"}
   #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.am335x_opt" , "bam_entity_name":"Onkyo", "icon":"mdi:amplifier"}
-  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.broadlink_rmproplus_c7_9b_ab" , "bam_entity_name":"Broadlink", "icon":"mdi:remote"}
-  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.02aa01ac36140mmx","bam_entity_name":"Nest","icon":"mdi:nativescript"}
-  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.18_b4_30_a2_96_5e","bam_entity_name":"Nest Protect","icon":"mdi:nativescript"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.broadlink_rmproplus_d9_9b_ab" , "bam_entity_name":"Broadlink", "icon":"mdi:remote"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.02aa04ac36140mmx","bam_entity_name":"Nest","icon":"mdi:nativescript"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.18_00_30_a2_96_5e","bam_entity_name":"Nest Protect","icon":"mdi:nativescript"}
   #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.titan","bam_entity_name":"Titan","icon":"mdi:nas"}
   #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.sitan","bam_entity_name":"Garage","icon":"mdi:nas"}
   #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.sma","bam_entity_name":"SMA","icon":"mdi:weather-sun"}
