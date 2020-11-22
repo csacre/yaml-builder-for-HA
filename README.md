@@ -12,6 +12,19 @@ Batch program in python producing a yaml file in output based on a templates. Th
 - Possibility to pass any custom parameters to the template
 - Possibility to pass Home-Assistant objects to the template (if used in HA context of course)
 
+# Syntax for Command & Parameters
+
+Command to add in YAML file (JSON parameters are optional:   
+#include <template.yaml>,<JSON parameters>
+The indentation of the ocmmand is very important. The block will be inserted using the same indentation as the command.
+
+| Keywords      | Type    | Description                                                                   |
+| ------------- | ------- | ------------------------------------------------------------------------------ |
+| **#include**  | Command | The command is #include,<template file>, the full content of the template will be incorporated |
+| **#block**    | JSON Parameter | Can define one of the block inside the template to only incorporate it and not the full yaml file. | 
+| **#jinja**    | JSON Parameter | true (default) or false
+| END           | Command | For debugging purpose, the reading of tthe file just stop if it reads the keywor "END"  
+
 # Example1 - Build automatically 1 automation for each "scene" of a room based on the selection done in a "input_select".
 To understand the meaning of the example, you probably need to be knoweldgeable on Homa-Assistant & how its YAML configuraiton works.
 In this example, with 10 lines of template + 20 lines of main code, we will generate automatically 200 lines of YAML in this example.
