@@ -1,0 +1,10 @@
+- id: 'change input select to {{ j.newstate }} for {{ j.inputselect }}'
+ alias: 'change input select to {{ j.newstate }} for {{ j.inputselect }}'
+ trigger:
+   - platform: state
+     entity_id: input_select.{{ j.inputselect }}
+     to: '{{ j.newstate }}'
+ action:
+   - service: scene.turn_on
+     entity_id: scene.scene_{{ j.room }}_{{ j.newstate }}
+     
