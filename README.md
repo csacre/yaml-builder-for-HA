@@ -4,6 +4,10 @@
 
 Batch program in python producing a yaml file in output based on a template. This was created to ease &amp; have consistency when configuring home assistant with YAML but it works in other use cases where you need to compose/build YAML files. 
 
+# Disclaimer
+This is my first project sharing on Github and I try to do my best, suggestion/coaching is welcomed.
+Code is not bullet-proof (220 lines of code written on a few hours) but it does the job.
+
 # Features
 - Replace a part of a YAML file by inserting a template
 - The template rendering engine is Jinja2 (see https://jinja.palletsprojects.com/en/2.11.x/), to replace value, if statement logic etc...
@@ -12,7 +16,10 @@ Batch program in python producing a yaml file in output based on a template. Thi
 - Possibility to pass any custom parameters to the template
 - Possibility to pass Home-Assistant objects to the template (if used in HA context of course)
 
-# Syntax for Command & Parameters
+# Command line
+python ../yamlbuilder.py <inputfile>.yaml <outputfile>.yaml
+
+# Syntax for Command & Parameters inside the templates
 Command to add in YAML file (JSON parameters are optional:   
 \#include <template.yaml>,<JSON parameters>
 The indentation of the ocmmand is very important. The block will be inserted using the same indentation as the command.
@@ -118,6 +125,68 @@ The "zhumidity" collection is defined here-above in the g.json file (using regex
           mdi:alert-rhombus
         {{ "{% endif %}"}}
   {% endfor %}
+```
+
+An example that show how to group several templates in a single file using the #block keyword.
+You have to typically insert the block1 in a lovelace yaml file and the builder will resolve all this to you...
+
+```
+- type: vertical-stack
+  cards:
+  #include bam_blocks.yaml,{"#block":"2"}
+  #include bam_blocks.yaml,{"#block":"4"}
+
+- type: horizontal-stack
+  cards:
+  {% for zigate in g.zigates -%}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"{{zigate.entity_id}}_bam" , "bam_entity_name":"{{zigate.attributes.friendly_name}}", "icon":"mdi:zigbee"}
+  {% endfor %}
+    
+- cards:
+  type: custom:button-card
+  icon: {{j.icon}}
+  show_icon: true
+  show_name: true
+  show_state: flase
+  entity: {{ j.bam_entity }}
+  name: {{ j.bam_entity_name }}
+  state: 
+    - value: 'on'
+      styles:
+        card:
+        - background-color: rgb(56,124,68)
+    - value: 'home'
+      styles:
+        card:
+        - background-color: rgb(56,124,68)
+    - value: 'connected'
+      styles:
+        card:
+        - background-color: rgb(56,124,68)
+    - value: 'off'
+      styles:
+        card:
+        - background-color: rgb(255,0,0)
+    - value: 'not_home'
+      styles:
+        card:
+        - background-color: rgb(255,0,0)
+    - value: 'disconnected'
+      styles:
+        card:
+        - background-color: rgb(255,0,0)
+
+
+- type: horizontal-stack
+  cards:
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"zigate.zigate" , "bam_entity_name":"Zigate", "icon":"mdi:zigbee"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.am335x_opt" , "bam_entity_name":"Onkyo", "icon":"mdi:amplifier"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.broadlink_rmproplus_c7_9b_ab" , "bam_entity_name":"Broadlink", "icon":"mdi:remote"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.02aa01ac36140mmx","bam_entity_name":"Nest","icon":"mdi:nativescript"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.18_b4_30_a2_96_5e","bam_entity_name":"Nest Protect","icon":"mdi:nativescript"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.titan","bam_entity_name":"Titan","icon":"mdi:nas"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.sitan","bam_entity_name":"Garage","icon":"mdi:nas"}
+  #include bam_blocks.yaml,{"#block":"3", "bam_entity":"device_tracker.sma","bam_entity_name":"SMA","icon":"mdi:weather-sun"}
 ```
 
 
