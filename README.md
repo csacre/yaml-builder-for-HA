@@ -84,7 +84,6 @@ The static data can be accessed in templete using {{ g.<attribute> }} to get the
 If you need to apply a template for all sensor having regex selection on name, you need to define the IP adress of HA
  and provides a bearer token. For now, simply dapt the code at the top of yamlbuilder.yaml
 
-## Example of 
 Here below I define static variables (var1, var2) and dynamic lists of objects I extract from HA to allow making loop in my templates
 ```
 {
@@ -97,8 +96,8 @@ Here below I define static variables (var1, var2) and dynamic lists of objects I
     "var2": "value2"
 }
 ```
-Here below is the template to generate alerts for all my "humidity" sensors.
-The zhumidity collection is defined here-above in the g.json file (using regex expression for selection)
+Here below is the template to generate alerts for all "humidity" sensors.
+The "zhumidity" collection is defined here-above in the g.json file (using regex expression for selection)
 
 ```
 ###########################################
