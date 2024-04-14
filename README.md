@@ -36,9 +36,9 @@ The indentation of the ocmmand is very important. The block will be inserted usi
  
 
 # Example1 - Build automatically 1 automation for each "scene" of a room based on the selection done in a "input_select".
-To understand the meaning of the example, you probably need to be knoweldgeable on Homa-Assistant & how its YAML configuraiton works.
+To understand the meaning of the example, you probably need to be knowledgeable on Home-Assistant & how its YAML configuration works.
 In this example, with 10 lines of template + 20 lines of main code, we will generate automatically 200 lines of YAML.
-I use this to have a better "semantic" view of my files and this can enforse easily consistency across similar needs (like here all automations uses the same templete, if we change the template you rebuild and have all automations adapted, no risk to forget one update.
+I use this to have a better "semantic" view of my files and this can enforce easily & consistency across similar needs (like here all automations uses the same templete, if we change the template you rebuild and have all automations are adapted, no risk to forget one update.
 
 You need one template for the automation: template1.yaml
 in this case it reprends the "how" a functionality is rendered in native YAML for Home-Assistant
